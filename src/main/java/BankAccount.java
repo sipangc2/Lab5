@@ -12,47 +12,51 @@ public class BankAccount {
     /*
      * You may want to use this to distinguish between different kinds of accounts.
      */
+
+    /**
+     * different types of accounts.
+     */
     public enum BankAccountType {
         /**
-         * Bank account type checkings
+         * Bank account type checkings.
          */
         CHECKINGS,
         /**
-         * Bank account type savings
+         * Bank account type savings.
          */
         SAVINGS,
         /**
-         * Bank account type student
+         * Bank account type student.
          */
         STUDENT,
         /**
-         * Bank account type workplace
+         * Bank account type workplace.
          */
         WORKPLACE
     }
 
     /**
-     * account number to identify the account
+     * account number to identify the account.
      */
     private int accountNumber;
     /**
-     * type of account
+     * type of account.
      */
     private BankAccountType accountType;
     /**
-     * balance available in the account
+     * balance available in the account.
      */
     private double accountBalance;
     /**
-     * the owner name of the account
+     * the owner name of the account.
      */
     private String ownerName;
     /**
-     * the rate of interest
+     * the rate of interest.
      */
     private double interestRate;
     /**
-     * the total amount interest earned
+     * the total amount interest earned.
      */
     private double interestEarned;
 
@@ -68,14 +72,14 @@ public class BankAccount {
 
     /**
      *
-     * @return
+     * @return account number
      */
     public int getAccountNumber() {
         return accountNumber;
     }
 
     /**
-     * set account number
+     * set account number.
      * @param accnum account number
      */
     public void setAccountNumber(final int accnum) {
@@ -110,7 +114,7 @@ public class BankAccount {
      *
      * @param balance input amount of balance available
      */
-    public void setAccountBalance(final int balance) {
+    public void setAccountBalance(final double balance) {
         accountBalance = balance;
     }
 

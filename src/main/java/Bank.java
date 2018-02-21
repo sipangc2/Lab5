@@ -32,7 +32,7 @@ public class Bank {
      */
     public boolean withdrawMoney(final BankAccount bankAccount, final double amount) {
         if (bankAccount.getAccountBalance() > amount && amount > 0) {
-            bankAccount.getAccountBalance() = bankAccount.getAccountBalance() - amount;
+            bankAccount.setAccountBalance(bankAccount.getAccountBalance() - amount);
             return true;
         } else {
             return false;
@@ -51,7 +51,7 @@ public class Bank {
      */
     public boolean depositMoney(final BankAccount bankAccount, final double amount) {
         if (amount > 0) {
-            bankAccount.getAccountBalance() += amount;
+            bankAccount.setAccountBalance(bankAccount.getAccountBalance() + amount);
             return true;
         } else {
             return false;
@@ -72,9 +72,9 @@ public class Bank {
 
     public boolean transferMoney(final BankAccount source, final BankAccount destination,
             final double amount) {
-        if (amount > 0) {
-            source.getAccountBalance() -= amount;
-            destination.getAccountBalance() += amount;
+        if (amount > 0 && amount <= source.getAccountBalance()) {
+            source.setAccountBalance(source.getAccountBalance() - amount);
+            destination.setAccountBalance(destination.getAccountBalance() + amount);
             return true;
         } else {
             return false;
@@ -89,7 +89,7 @@ public class Bank {
      */
 
     public void changeOwnerName(final BankAccount bankAccount, final String name) {
-            bankAccount.getOwnerName() = name;
+            bankAccount.setOwnerName(name);
     }
 
     /**
